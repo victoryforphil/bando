@@ -4,4 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+bevy = "0.14.2"
 serde = { version = "1.0.210", features = ["derive"] }
+bevy_rapier3d = { version = "*", features = [ "simd-stable", "debug-render-3d" ] }
+
+
