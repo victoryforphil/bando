@@ -1,0 +1,33 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+package(default_visibility = ["//visibility:public"])
+
+cmake(
+    name = "sdl3",
+    lib_source = "@sdl3_src//:all",
+    cache_entries = {
+        "SDL_SHARED": "OFF",
+        "SDL_STATIC": "ON",
+        "SDL_TESTS": "OFF",
+        "SDL_INSTALL_TESTS": "OFF",
+        "SDL_PIPEWIRE": "OFF",
+        "SDL_PIPEWIRE_SHARED": "OFF",
+    },
+    out_static_libs = ["libSDL3.a"],
+)
+
+cmake(
+    name = "jolt",
+    lib_source = "@jolt_src//:all",
+    working_directory = "Build",
+    cache_entries = {
+        "BUILD_SHARED_LIBS": "OFF",
+        "ENABLE_INSTALL": "ON",
+        "TARGET_UNIT_TESTS": "OFF",
+        "TARGET_HELLO_WORLD": "OFF",
+        "TARGET_PERFORMANCE_TEST": "OFF",
+        "TARGET_SAMPLES": "OFF",
+        "TARGET_VIEWER": "OFF",
+    },
+    out_static_libs = ["libJolt.a"],
+)

@@ -1,0 +1,5 @@
+cc_binary(
+    name = "hello_spdlog",
+    srcs = ["hello_spdlog.cc"],
+    deps = ["@spdlog_src//:spdlog"],
+)

@@ -1,0 +1,5 @@
+cc_binary(
+    name = "hello_glm",
+    srcs = ["hello_glm.cc"],
+    deps = ["@glm_src//:glm"],
+)

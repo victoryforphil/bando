@@ -1,0 +1,6 @@
+cc_binary(
+    name = "hello_jolt",
+    srcs = ["hello_jolt.cc"],
+    defines = ["JPH_NO_DEBUG"],
+    deps = ["//third_party:jolt"],
+)

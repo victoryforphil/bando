@@ -1,0 +1,5 @@
+cc_binary(
+    name = "hello_sdl3",
+    srcs = ["hello_sdl3.cc"],
+    deps = ["//third_party:sdl3"],
+)
