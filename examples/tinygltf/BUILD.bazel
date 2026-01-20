@@ -2,6 +2,7 @@ cc_library(
     name = "tinygltf_impl",
     srcs = ["tinygltf_impl.cc"],
     defines = ["TINYGLTF_NO_INCLUDE_JSON"],
+    visibility = ["//visibility:public"],
     deps = [
         "@nlohmann_json//:json",
         "@stb_src//:stb_headers",

@@ -1,0 +1,19 @@
+cc_binary(
+    name = "hello_3d",
+    srcs = ["hello_3d.cc"],
+    defines = ["TINYGLTF_NO_INCLUDE_JSON"],
+    data = [
+        "assets/Box.glb",
+        "assets/README.md",
+        "shaders/hello_3d.frag.spv",
+        "shaders/hello_3d.vert.spv",
+    ],
+    deps = [
+        "//examples/tinygltf:tinygltf_impl",
+        "//third_party:sdl3",
+        "@glm_src//:glm",
+        "@nlohmann_json//:json",
+        "@stb_src//:stb_headers",
+        "@tinygltf_src//:tinygltf_headers",
+    ],
+)
