@@ -1,0 +1,22 @@
+cc_library(
+    name = "tinygltf_impl",
+    srcs = ["tinygltf_impl.cc"],
+    defines = ["TINYGLTF_NO_INCLUDE_JSON"],
+    deps = [
+        "@nlohmann_json//:json",
+        "@stb_src//:stb_headers",
+        "@tinygltf_src//:tinygltf_headers",
+    ],
+)
+
+cc_binary(
+    name = "hello_tinygltf",
+    srcs = ["hello_tinygltf.cc"],
+    defines = ["TINYGLTF_NO_INCLUDE_JSON"],
+    deps = [
+        ":tinygltf_impl",
+        "@nlohmann_json//:json",
+        "@stb_src//:stb_headers",
+        "@tinygltf_src//:tinygltf_headers",
+    ],
+)
